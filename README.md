@@ -16,7 +16,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.quanqi:pgyer:0.1.2'
+    classpath 'me.wcy:pgyer:0.2'
   }
 }
 apply plugin: 'org.quanqi.pgyer'
