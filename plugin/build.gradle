@@ -1,0 +1,37 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'com.novoda.bintray-release'
+
+dependencies {
+    compile gradleApi()
+    compile 'org.json:json:20200518'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'commons-lang:commons-lang:2.6'
+}
+
+group = 'me.wcy'
+archivesBaseName = 'pgyer'
+version = VERSION
+
+/**
+ * $ ./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+ */
+publish {
+    userOrg = 'chanwong21'
+    groupId = 'me.wcy'
+    artifactId = 'pgyer'
+    publishVersion = VERSION
+    desc = 'gradle plugin for pugongying upload'
+    website = 'https://github.com/wangchenyan/pgyer'
+}
+
+/**
+ * local upload
+ */
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: uri('../repo'))
+//        }
+//    }
+//}
